@@ -6,8 +6,22 @@ use Guzzle\Common\Collection;
 use Guzzle\Service\Client;
 use Guzzle\Service\Description\ServiceDescription;
 
+/**
+ * Client for sending payments with the Eway Direct Transactions API.
+ */
 class EwayClient extends Client
 {
+ 
+    /**
+     * Factory method to create a new EwayClient 
+     *
+     * The following array keys and values are available options:
+     * - base_url: Base URL of web service
+     *
+     * @param array|Collection $config Configuration data
+     *
+     * @return self
+     */
     public static function factory($config = array())
     {
         $default = array(
@@ -22,6 +36,12 @@ class EwayClient extends Client
         return $client;
     }
 
+    /**
+     * Static method to split an error string into code and message.
+     *
+     * @param string $value error string in the format of "XX,Error message"
+     * @return array An array containing the "code" and "message" of the error
+     */
     public static function transformError($value)
     {
         $parts = explode(',', $value);
