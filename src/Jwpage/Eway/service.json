@@ -1,0 +1,118 @@
+{
+    "name": "eWay Directs Payment API",
+    "operations": {
+        "SendPayment": {
+            "httpMethod": "POST",
+            "uri": "",
+            "summary": "Send a payment to the API",
+            "data": {
+                "xmlRoot": {
+                    "name": "ewaygateway" 
+                }
+            },
+            "parameters": {
+                "customerID": {
+                    "location": "xml",
+                    "required": true,
+                    "sentAs": "ewayCustomerID"
+                },
+                "totalAmount": {
+                    "location": "xml",
+                    "required": true,
+                    "sentAs": "ewayTotalAmount"
+                },
+                "customerFirstName": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayCustomerFirstName"
+                },
+                "customerLastName": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayCustomerLastName"
+                },
+                "customerEmail": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayCustomerEmail"
+                },
+                "customerAddress": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayCustomerAddress"
+                },
+                "customerPostcode": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayCustomerPostcode"
+                },
+                "customerInvoiceDescription": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayCustomerInvoiceDescription"
+                },
+                "customerInvoiceRef": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayCustomerInvoiceRef"
+                },
+                "cardHoldersName": {
+                    "location": "xml",
+                    "required": true,
+                    "sentAs": "ewayCardHoldersName"
+                },
+                "cardNumber": {
+                    "location": "xml",
+                    "required": true,
+                    "sentAs": "ewayCardNumber"
+                },
+                "cardExpiryMonth": {
+                    "location": "xml",
+                    "required": true,
+                    "sentAs": "ewayCardExpiryMonth"
+                },
+                "cardExpiryYear": {
+                    "location": "xml",
+                    "required": true,
+                    "sentAs": "ewayCardExpiryYear"
+                },
+                "trxnNumber": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayTrxnNumber"
+                },
+                "option1": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayOption1"
+                },
+                "option2": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayOption2"
+                },
+                "option3": {
+                    "default": "",
+                    "location": "xml",
+                    "required": false,
+                    "sentAs": "ewayOption3"
+                },
+                "CVN": {
+                    "location": "xml",
+                    "required": true,
+                    "sentAs": "ewayCVN"
+                }
+            }
+        }
+    }
+}
