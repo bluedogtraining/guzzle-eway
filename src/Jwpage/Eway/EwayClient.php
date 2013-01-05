@@ -21,4 +21,10 @@ class EwayClient extends Client
 
         return $client;
     }
+
+    public static function transformError($value)
+    {
+        $parts = explode(',', $value);
+        return array_combine(array('code', 'message'), $parts);
+    }
 }

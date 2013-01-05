@@ -5,6 +5,8 @@
             "httpMethod": "POST",
             "uri": "",
             "summary": "Send a payment to the API",
+            "responseClass": "SendPaymentResponse",
+            "responseType": "model",
             "data": {
                 "xmlRoot": {
                     "name": "ewaygateway" 
@@ -111,6 +113,51 @@
                     "location": "xml",
                     "required": true,
                     "sentAs": "ewayCVN"
+                }
+            }
+        }
+    },
+    "models": {
+        "SendPaymentResponse": {
+            "type": "object",
+            "properties": {
+                "trxnError": {
+                    "location": "xml",
+                    "sentAs": "ewayTrxnError",
+                    "filters": ["\\Jwpage\\Eway\\EwayClient::transformError"]
+                },
+                "trxnStatus": {
+                    "location": "xml",
+                    "sentAs": "ewayTrxnStatus",
+                    "type": "boolean"
+                },
+                "trxnNumber": {
+                    "location": "xml",
+                    "sentAs": "ewayTrxnNumber"
+                },
+                "trxnOption1": {
+                    "location": "xml",
+                    "sentAs": "ewayTrxnOption1"
+                },
+                "trxnOption2": {
+                    "location": "xml",
+                    "sentAs": "ewayTrxnOption2"
+                },
+                "trxnOption3": {
+                    "location": "xml",
+                    "sentAs": "ewayTrxnOption3"
+                },
+                "returnAmount": {
+                    "location": "xml",
+                    "sentAs": "ewayReturnAmount"
+                },
+                "authCode": {
+                    "location": "xml",
+                    "sentAs": "ewayAuthCode"
+                },
+                "trxnReference": {
+                    "location": "xml",
+                    "sentAs": "ewayTrxnReference"
                 }
             }
         }
