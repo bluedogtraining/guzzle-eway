@@ -11,7 +11,7 @@ class EwayClient extends Client
     public static function factory($config = array())
     {
         $default = array(
-            'base_url' => '',
+            'base_url' => 'https://www.eway.com.au/gateway_cvn/xmlpayment.asp',
         );
         $config = Collection::fromConfig($config, $default);
         $description = ServiceDescription::factory(__DIR__.'/service.json');
