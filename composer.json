@@ -1,5 +1,5 @@
 {
-    "name": "jwpage/guzzle-clickatell",
+    "name": "jwpage/guzzle-eway",
     "description": "A Guzzle client for interacting with the Eway Direct Transactions API",
     "type": "library",
     "keywords": [
