@@ -1,0 +1,8 @@
+POST /gateway_cvn/xmltest/testpage.asp HTTP/1.1
+Host: www.eway.com.au
+User-Agent: Guzzle/3.0.7 curl/7.24.0 PHP/5.4.4
+Content-Length: 566
+Content-Type: application/xml
+
+<?xml version="1.0"?>
+<ewaygateway><ewayCustomerID>87654321</ewayCustomerID><ewayTotalAmount>10</ewayTotalAmount><ewayCustomerFirstName/><ewayCustomerLastName/><ewayCustomerEmail/><ewayCustomerAddress/><ewayCustomerPostcode/><ewayCustomerInvoiceDescription/><ewayCustomerInvoiceRef/><ewayCardHoldersName>Foo Bar</ewayCardHoldersName><ewayCardNumber>4444333322221111</ewayCardNumber><ewayCardExpiryMonth>06</ewayCardExpiryMonth><ewayCardExpiryYear>20</ewayCardExpiryYear><ewayTrxnNumber/><ewayOption1/><ewayOption2/><ewayOption3/><ewayCVN>123</ewayCVN></ewaygateway>
