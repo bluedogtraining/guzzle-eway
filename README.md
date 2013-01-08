@@ -28,7 +28,7 @@ $response = $client->getCommand('SendPayment', array(
     'cardNumber'      => '4444333322221111',                           
     'cardExpiryMonth' => '06',                                         
     'cardExpiryYear'  => '20',                                         
-    'CVN'
+    'CVN'             => '123',
 ))->execute();
 
 $response['trxnStatus']; // true
