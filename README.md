@@ -17,7 +17,7 @@ $client = \Jwpage\Clickatell\ClickatellClient::factory();
 
 ### Send Payment
 
-Comman arguments are as defined in the [Eway API](http://www.eway.com.au/developers/api/direct-payments),
+Command arguments are as defined in the [Eway API](http://www.eway.com.au/developers/api/direct-payments),
 except without the `eway` prefix.
 
 ```php
