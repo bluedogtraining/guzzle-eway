@@ -5,6 +5,8 @@ namespace Jwpage\Eway\Log;
 use Guzzle\Log\MessageFormatter as GuzzleMessageFormatter;
 use Guzzle\Http\Message\EntityEnclosingRequestInterface;
 use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Curl\CurlHandle;
 
 /**
  * Eway MessageFormatter that hides the credit card number from logs.
