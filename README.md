@@ -1,5 +1,7 @@
 # guzzle-eway
 
+[![Build Status](https://travis-ci.org/jwpage/guzzle-eway.png)](https://travis-ci.org/jwpage/guzzle-eway)
+
 A PHP 5.3+ Guzzle client for interacting with the Eway Direct Transaction API.
 
 ## Installation
