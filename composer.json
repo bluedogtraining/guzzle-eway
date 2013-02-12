@@ -1,5 +1,5 @@
 {
-    "name": "jwpage/guzzle-eway",
+    "name": "bluedogtraining/guzzle-eway",
     "description": "A Guzzle client for interacting with the Eway Direct Transactions API",
     "type": "library",
     "keywords": [
@@ -20,6 +20,6 @@
         "phpunit/phpunit": "*"
     },
     "autoload": {
-        "psr-0": { "Jwpage\\Eway": "src/" }
+        "psr-0": { "Bdt\\Eway": "src/" }
     }
 }

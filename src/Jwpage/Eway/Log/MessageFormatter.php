@@ -1,6 +1,6 @@
 <?php
 
-namespace Jwpage\Eway\Log;
+namespace Bdt\Eway\Log;
 
 use Guzzle\Log\MessageFormatter as GuzzleMessageFormatter;
 use Guzzle\Http\Message\EntityEnclosingRequestInterface;

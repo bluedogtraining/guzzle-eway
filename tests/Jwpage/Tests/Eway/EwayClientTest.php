@@ -1,8 +1,8 @@
 <?php
 
-namespace Jwpage\Test\Eway;
+namespace Bdt\Test\Eway;
 
-use Jwpage\Eway\EwayClient;
+use Bdt\Eway\EwayClient;
 use Guzzle\Tests\GuzzleTestCase;
 use Guzzle\Plugin\Log\LogPlugin;
 

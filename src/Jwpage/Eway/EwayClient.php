@@ -1,6 +1,6 @@
 <?php
 
-namespace Jwpage\Eway;
+namespace Bdt\Eway;
 
 use Guzzle\Common\Collection;
 use Guzzle\Service\Client;

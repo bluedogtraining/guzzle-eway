@@ -1,20 +1,20 @@
 # guzzle-eway
 
-[![Build Status](https://travis-ci.org/jwpage/guzzle-eway.png)](https://travis-ci.org/jwpage/guzzle-eway)
+[![Build Status](https://travis-ci.org/bluedogtraining/guzzle-eway.png)](https://travis-ci.org/bluedogtraining/guzzle-eway)
 
 A PHP 5.3+ Guzzle client for interacting with the Eway Direct Transaction API.
 
 ## Installation
 
 Add this to your composer.json by running
-`composer.phar require jwpage/guzzle-eway`.
+`composer.phar require bluedogtraining/guzzle-eway`.
 
 ## Usage
 
 ### Create API client
 
 ```php
-$client = \Jwpage\Clickatell\ClickatellClient::factory();
+$client = \Bdt\Clickatell\ClickatellClient::factory();
 ```
 
 ### Send Payment

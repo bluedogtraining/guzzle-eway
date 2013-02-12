@@ -1,8 +1,8 @@
 <?php
 
-namespace Jwpage\Test\Eway\Log;
+namespace Bdt\Test\Eway\Log;
 
-use Jwpage\Eway\Log\MessageFormatter;
+use Bdt\Eway\Log\MessageFormatter;
 use Guzzle\Http\Message\RequestFactory;
 
 class EwayClientTest extends \PHPUnit_Framework_TestCase

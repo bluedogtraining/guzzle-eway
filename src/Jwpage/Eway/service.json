@@ -124,7 +124,7 @@
                 "trxnError": {
                     "location": "xml",
                     "sentAs": "ewayTrxnError",
-                    "filters": ["\\Jwpage\\Eway\\EwayClient::transformError"]
+                    "filters": ["\\Bdt\\Eway\\EwayClient::transformError"]
                 },
                 "trxnStatus": {
                     "location": "xml",
