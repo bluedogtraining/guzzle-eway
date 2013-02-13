@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 2.0.0 (2013-02-13)
+    * Moved all classes from Jwpage to Bdt.
+
 * 1.0.1 (2013-01-09)
     * Fix MessageFormatter::format declaration.
 
