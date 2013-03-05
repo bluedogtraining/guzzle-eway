@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 2.0.1 (2013-03-05)
+    * Support Guzzle 3.3.0
+
 * 2.0.0 (2013-02-13)
     * Moved all classes from Jwpage to Bdt.
 
