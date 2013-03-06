@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 2.0.2 (2013-03-06)
+    * Add `customer_id` config option to set as default eWay customerID.
+
 * 2.0.1 (2013-03-05)
     * Support Guzzle 3.3.0
 

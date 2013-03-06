@@ -3,6 +3,7 @@
 namespace Bdt\Eway;
 
 use Guzzle\Common\Collection;
+use Guzzle\Common\Event;
 use Guzzle\Service\Client;
 use Guzzle\Service\Description\ServiceDescription;
 
@@ -32,8 +33,20 @@ class EwayClient extends Client
 
         $client = new self($config->get('base_url'), $config);
         $client->setDescription($description);
-
         return $client;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __construct($baseUrl = '', $config = null)
+    {
+        parent::__construct($baseUrl, $config);
+        if ($config && !empty($config['customer_id'])) {
+            $this->getEventDispatcher()->addListener('command.before_prepare', function(Event $event) use ($config) {
+                $event['command']['customerID'] = $event['command']['customerID']  ?: $config['customer_id'];
+            });
+        }
     }
 
     /**

@@ -15,6 +15,24 @@ class EwayClientTest extends GuzzleTestCase
         ));
     }
 
+    public function testCanSetCustomerIdInClient()
+    {
+        $this->client = EwayClient::factory(array(
+            'base_url' => 'https://www.eway.com.au/gateway_cvn/xmltest/testpage.asp',
+            'customer_id' => 100 
+        ));
+        $command = $this->client->getCommand('SendPayment', array(
+            'totalAmount'     => '10',
+            'cardHoldersName' => 'Foo Bar',
+            'cardNumber'      => '4444333322221111',
+            'cardExpiryMonth' => '06',
+            'cardExpiryYear'  => '20',
+            'CVN'             => '123',
+        ));
+        $command->prepare();
+        $this->assertEquals(100, $command['customerID']);
+    }
+
     public function testSendPayment()
     {
         $this->setMockResponse($this->client, 'sendpayment_success.txt');
