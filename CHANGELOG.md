@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 2.1.1 (2013-04-15)
+    * Support Guzzle 3.4.0
+
 * 2.1.0 (2013-03-06)
     * Add `customer_id` config option to set as eWay customerID when no customerID is set.
 
