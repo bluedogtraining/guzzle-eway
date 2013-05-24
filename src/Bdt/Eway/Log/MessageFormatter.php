@@ -24,13 +24,18 @@ class MessageFormatter extends GuzzleMessageFormatter
         array $customData = array()
     ) {
         if ($request instanceof EntityEnclosingRequestInterface) {
-            $request = clone($request);
-            $body = preg_replace_callback('/<ewayCardNumber>(.*?)<\/ewayCardNumber>/', function($matches) {
+            $body = $request->getBody()->__toString();
+            $newBody = preg_replace_callback('/<ewayCardNumber>(.*?)<\/ewayCardNumber>/', function($matches) {
                 $privateNumber = str_repeat('X', strlen($matches[1])-4).substr($matches[1], -4);
                 return '<ewayCardNumber modified>'.$privateNumber.'</ewayCardNumber>';
-            }, $request->getBody()->__toString());
+            }, $body);
+            $newRequest = clone $request;
+            $newRequest->setBody($newBody);
+
             $request->setBody($body);
+        } else {
+            $newRequest = $request;
         }
-        return parent::format($request, $response, $handle, $customData);
+        return parent::format($newRequest, $response, $handle, $customData);
     }
 }
