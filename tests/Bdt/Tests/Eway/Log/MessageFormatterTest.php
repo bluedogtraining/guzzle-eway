@@ -5,7 +5,7 @@ namespace Bdt\Test\Eway\Log;
 use Bdt\Eway\Log\MessageFormatter;
 use Guzzle\Http\Message\RequestFactory;
 
-class EwayClientTest extends \PHPUnit_Framework_TestCase
+class MessageFormatterTest extends \PHPUnit_Framework_TestCase
 {
     public function testFormat()
     {
