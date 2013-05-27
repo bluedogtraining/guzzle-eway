@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+* 2.1.2 (2013-05-24)
+    * Support Guzzle 3.5.0
+    * Add workaround for `EntityEnclosingRequest::__clone` issue
+      (see https://github.com/guzzle/guzzle/issues/327)
+
 * 2.1.1 (2013-04-15)
     * Support Guzzle 3.4.0
 
