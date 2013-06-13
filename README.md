@@ -14,7 +14,7 @@ Add this to your composer.json by running
 ### Create API client
 
 ```php
-$client = \Bdt\Clickatell\ClickatellClient::factory();
+$client = \Bdt\Eway\EwayClient::factory();
 ```
 
 ### Send Payment
