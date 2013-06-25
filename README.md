@@ -44,7 +44,7 @@ First, install PHPUnit with `composer.phar install --dev`, then run
 
 ## More Reading
 
-* [guzzlephp.org: Consuming web services using web service clients](http://guzzlephp.org/tour/using_services.html)
+* [guzzlephp.org: Consuming web services using web service clients](http://guzzlephp.org/webservice-client/webservice-client.html)
 * [eway.com.au: Response Codes](http://www.eway.com.au/developers/resources/response-codes)
 * [eway.com.au: Direct Payments Sandbox](http://www.eway.com.au/developers/sandbox/direct-payments)
 * [eway.com.au: Direct Payments Documentation](http://www.eway.com.au/developers/api/direct-payments)
