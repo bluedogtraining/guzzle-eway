@@ -58,6 +58,11 @@ class EwayClient extends Client
     public static function transformError($value)
     {
         $parts = explode(',', $value);
+
+        if (2 !== count($parts)) {
+            return array('code' => null, 'message' => $value);
+        }
+
         return array_combine(array('code', 'message'), $parts);
     }
 }
