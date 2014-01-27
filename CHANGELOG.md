@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 2.1.4 (2014-01-28)
+    * Add support for non-numeric eWay error messages
+    * Support Guzzle 3.8.0
+
 * 2.1.3 (2013-06-13)
     * Support Guzzle 3.7.0
     * Support Guzzle 3.6.0
