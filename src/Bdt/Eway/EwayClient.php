@@ -2,15 +2,17 @@
 
 namespace Bdt\Eway;
 
-use Guzzle\Common\Collection;
-use Guzzle\Common\Event;
-use Guzzle\Service\Client;
-use Guzzle\Service\Description\ServiceDescription;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Client;
+use GuzzleHttp\Collection;
+use GuzzleHttp\Command\Event\PrepareEvent;
+use GuzzleHttp\Command\Guzzle\GuzzleClient;
+use GuzzleHttp\Command\Guzzle\Description;
 
 /**
  * Client for sending payments with the Eway Direct Transactions API.
  */
-class EwayClient extends Client
+class EwayClient extends GuzzleClient
 {
  
     /**
@@ -18,35 +20,37 @@ class EwayClient extends Client
      *
      * The following array keys and values are available options:
      * - base_url: Base URL of web service
+     * - customer_id: a default customerID to use
      *
      * @param array|Collection $config Configuration data
      *
      * @return self
      */
-    public static function factory($config = array())
+    public function __construct (Client $client, $config = array())
     {
-        $default = array(
-            'base_url' => 'https://www.eway.com.au/gateway_cvn/xmlpayment.asp',
-        );
-        $config = Collection::fromConfig($config, $default);
-        $description = ServiceDescription::factory(__DIR__.'/service.json');
+        $descriptionJson = json_decode(file_get_contents(__DIR__.'/service.json'), true);
+        if (empty($config['base_url'])) {
+            $config['base_url'] = 'https://www.eway.com.au/gateway_cvn/xmlpayment.asp';
+        }
+        $descriptionJson['baseUrl'] = $config['base_url'];
 
-        $client = new self($config->get('base_url'), $config);
-        $client->setDescription($description);
-        return $client;
+        $description = new Description($descriptionJson);
+        parent::__construct($client, $description, $config);
+
+        if (!empty($config['customer_id'])) {
+            $this->getEmitter()->on('prepare', function(PrepareEvent $event) use ($config) {
+                $command = $event->getCommand();
+                if (empty($command['customerID'])) {
+                    $command['customerID'] = $config['customer_id'];
+                }
+            }, 'first');
+        }
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function __construct($baseUrl = '', $config = null)
+    public static function factory($config = [])
     {
-        parent::__construct($baseUrl, $config);
-        if ($config && !empty($config['customer_id'])) {
-            $this->getEventDispatcher()->addListener('command.before_prepare', function(Event $event) use ($config) {
-                $event['command']['customerID'] = $event['command']['customerID']  ?: $config['customer_id'];
-            });
-        }
+        $client = new Client();
+        return new self($client, $config);
     }
 
     /**

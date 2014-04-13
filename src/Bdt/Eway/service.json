@@ -5,8 +5,7 @@
             "httpMethod": "POST",
             "uri": "",
             "summary": "Send a payment to the API",
-            "responseClass": "SendPaymentResponse",
-            "responseType": "model",
+            "responseModel": "SendPaymentResponse",
             "data": {
                 "xmlRoot": {
                     "name": "ewaygateway" 
