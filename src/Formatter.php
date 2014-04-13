@@ -8,13 +8,13 @@ use GuzzleHttp\Message\ResponseInterface;
 use GuzzleHttp\Stream\Stream;
 
 /**
- * Eway MessageFormatter that hides the credit card number from logs.
+ * Eway Formatter that hides the credit card number from logs.
  */
 class Formatter extends DefaultFormatter
 {
     /**
      * {@inheritdoc}
-     * Also replaces the ewayCardNumber field in the body with Xs.
+     * Replaces the ewayCardNumber field in the body with "X"s.
      */
     public function format(
         RequestInterface $request,

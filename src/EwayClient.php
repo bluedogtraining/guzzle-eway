@@ -16,15 +16,11 @@ class EwayClient extends GuzzleClient
 {
  
     /**
-     * Factory method to create a new EwayClient 
+     * {@inheritDoc}
      *
-     * The following array keys and values are available options:
+     * The additional array keys and values are available config options:
      * - base_url: Base URL of web service
      * - customer_id: a default customerID to use
-     *
-     * @param array|Collection $config Configuration data
-     *
-     * @return self
      */
     public function __construct (Client $client, $config = array())
     {
@@ -47,6 +43,12 @@ class EwayClient extends GuzzleClient
         }
     }
 
+    /**
+     * Shortcut to creating an EwayClient, when not passing a new Client.
+     * 
+     * @param array $config 
+     * @return self
+     */
     public static function factory($config = [])
     {
         $client = new Client();
