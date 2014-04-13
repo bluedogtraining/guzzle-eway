@@ -38,7 +38,7 @@ class EwayClient extends GuzzleClient
         parent::__construct($client, $description, $config);
 
         if (!empty($config['customer_id'])) {
-            $this->getEmitter()->on('prepare', function(PrepareEvent $event) use ($config) {
+            $this->getEmitter()->on('prepare', function (PrepareEvent $event) use ($config) {
                 $command = $event->getCommand();
                 if (empty($command['customerID'])) {
                     $command['customerID'] = $config['customer_id'];

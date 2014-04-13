@@ -10,7 +10,7 @@ use GuzzleHttp\Stream\Stream;
 /**
  * Eway MessageFormatter that hides the credit card number from logs.
  */
-class Formatter extends DefaultFormatter 
+class Formatter extends DefaultFormatter
 {
     /**
      * {@inheritdoc}
@@ -24,7 +24,7 @@ class Formatter extends DefaultFormatter
     ) {
         $body = $request->getBody()->__toString();
 
-        $newBody = preg_replace_callback('/<ewayCardNumber>(.*?)<\/ewayCardNumber>/', function($matches) {
+        $newBody = preg_replace_callback('/<ewayCardNumber>(.*?)<\/ewayCardNumber>/', function ($matches) {
             $privateNumber = str_repeat('X', strlen($matches[1])-4).substr($matches[1], -4);
             return '<ewayCardNumber modified>'.$privateNumber.'</ewayCardNumber>';
         }, $body);
