@@ -21,7 +21,10 @@
         "guzzlehttp/log-subscriber": "*"
     },
     "autoload": {
-        "psr-0": { "Bdt\\Eway": "src/" }
+        "psr-4": { "Bdt\\Eway\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Bdt\\Tests\\Eway\\": "tests/" }
     },
     "extra": {
         "branch-alias": {

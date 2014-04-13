@@ -90,7 +90,7 @@ class EwayClientTest extends \PHPUnit_Framework_TestCase
 
     private function setMockResponse($file)
     {
-        $file = file_get_contents(__DIR__.'/../../../mock/'.$file);
+        $file = file_get_contents(__DIR__.'/mock/'.$file);
         $this->mock->addResponse($file);
     }
 
