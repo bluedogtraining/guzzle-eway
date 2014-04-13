@@ -18,7 +18,7 @@
         "guzzlehttp/guzzle-services": "0.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "guzzlehttp/log-subscriber": "*"
     },
     "autoload": {
         "psr-0": { "Bdt\\Eway": "src/" }
