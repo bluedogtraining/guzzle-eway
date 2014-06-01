@@ -3,7 +3,7 @@
 namespace Bdt\Test\Eway;
 
 use Bdt\Eway\EwayClient;
-use GuzzleHttp\Command\Event\EventWrapper;
+use GuzzleHttp\Command\Event\CommandEvents;
 use GuzzleHttp\Subscriber\Mock;
 
 class EwayClientTest extends \PHPUnit_Framework_TestCase
@@ -31,7 +31,7 @@ class EwayClientTest extends \PHPUnit_Framework_TestCase
             'cardExpiryYear'  => '20',
             'CVN'             => '123',
         ));
-        EventWrapper::prepareCommand($command, $this->client);
+        CommandEvents::prepare($command, $this->client);
         $this->assertEquals(100, $command['customerID']);
     }
 
