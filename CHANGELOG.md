@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-* 3.0.0 (2014-04-13)
+* 3.0.0 (2014-07-12)
     * Note: This release introduces a number of breaking changes.
     * Update directory structure to PSR-4 
     * Update to Guzzle 4
