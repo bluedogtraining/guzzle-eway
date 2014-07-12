@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+* 3.0.0 (2014-04-13)
+    * Note: This release introduces a number of breaking changes.
+    * Update directory structure to PSR-4 
+    * Update to Guzzle 4
+    * Remove 5.3 support
+    * `EwayClient::__construct` parameters changed to Guzzle 4 `GuzzleHttp\Command\Guzzke\GuzzleClient` parameters
+    * `Bdt\Eway\Log\MessageFormatter` is now `Bdt\Eway\Formatter`
+
 * 2.1.4 (2014-01-28)
     * Add support for non-numeric eWay error messages
     * Support Guzzle 3.8.0

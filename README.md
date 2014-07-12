@@ -4,10 +4,17 @@
 
 A PHP 5.3+ Guzzle client for interacting with the Eway Direct Transaction API.
 
-## Installation
+## Install
 
-Add this to your composer.json by running
-`composer.phar require bluedogtraining/guzzle-eway`.
+Via composer 
+
+```json
+{
+    "require": {
+        "bluedogtraining/guzzle-eway": "3.*"
+    }
+}
+```
 
 ## Usage
 
@@ -23,7 +30,7 @@ Command arguments are as defined in the [Eway API](http://www.eway.com.au/develo
 except without the `eway` prefix.
 
 ```php
-$response = $client->getCommand('SendPayment', array(
+$response = $client->SendPayment([
     'customerID'      => '87654321',                                   
     'totalAmount'     => '10',                                         
     'cardHoldersName' => 'Foo Bar',                                    
@@ -31,20 +38,21 @@ $response = $client->getCommand('SendPayment', array(
     'cardExpiryMonth' => '06',                                         
     'cardExpiryYear'  => '20',                                         
     'CVN'             => '123',
-))->execute();
+]);
 
 $response['trxnStatus']; // true
 $response['trxnError']['code']; // 10
 ```
 
-## Running Tests
+## Testing
 
-First, install PHPUnit with `composer.phar install --dev`, then run
-`./vendor/bin/phpunit`.
+```bash
+$ phpunit
+```
 
 ## More Reading
 
-* [guzzlephp.org: Consuming web services using web service clients](http://guzzlephp.org/webservice-client/webservice-client.html)
+* [guzzlephp.org: Guzzle](http://guzzlephp.org/)
 * [eway.com.au: Response Codes](http://www.eway.com.au/developers/resources/response-codes)
 * [eway.com.au: Direct Payments Sandbox](http://www.eway.com.au/developers/sandbox/direct-payments)
 * [eway.com.au: Direct Payments Documentation](http://www.eway.com.au/developers/api/direct-payments)

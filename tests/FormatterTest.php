@@ -1,17 +1,19 @@
 <?php
 
-namespace Bdt\Test\Eway\Log;
+namespace Bdt\Test\Eway;
 
-use Bdt\Eway\Log\MessageFormatter;
-use Guzzle\Http\Message\RequestFactory;
+use Bdt\Eway\Formatter;
+use GuzzleHttp\Message\MessageFactory;
 
-class MessageFormatterTest extends \PHPUnit_Framework_TestCase
+class FormatterTest extends \PHPUnit_Framework_TestCase
 {
     public function testFormat()
     {
+        $factory = new MessageFactory();
+
         $requestString = file_get_contents(MOCK_BASE_PATH.'/sendpayment_request.txt');
-        $request = RequestFactory::getInstance()->fromMessage($requestString);
-        $formatter = new MessageFormatter('{req_body}');
+        $request = $factory->fromMessage($requestString);
+        $formatter = new Formatter('{req_body}');
         $tpl = $formatter->format($request);
         $this->assertContains(
             '<ewayCardNumber modified>XXXXXXXXXXXX1111</ewayCardNumber>',

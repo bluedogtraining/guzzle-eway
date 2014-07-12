@@ -14,17 +14,21 @@
         }
     ],
     "require": {
-        "guzzle/guzzle": ">=3.0,<3.9"
+        "guzzlehttp/guzzle": "4.*",
+        "guzzlehttp/guzzle-services": "0.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "guzzlehttp/log-subscriber": "*"
     },
     "autoload": {
-        "psr-0": { "Bdt\\Eway": "src/" }
+        "psr-4": { "Bdt\\Eway\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Bdt\\Tests\\Eway\\": "tests/" }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.1.x-dev"
+            "dev-master": "3.0.x-dev"
         }
     }
 }
